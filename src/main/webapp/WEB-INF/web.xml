@@ -2,120 +2,17 @@
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
-                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
-<listener>
-    <listener-class>com.SMS.listener.AppContextListener</listener-class>
-</listener>
-
     <display-name>Student Management System</display-name>
+
+    <listener>
+        <listener-class>com.SMS.listener.AppContextListener</listener-class>
+    </listener>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
-	<!-- AUTH -->
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.SMS.auth.LoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.SMS.auth.LogoutServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/logout</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.SMS.auth.RegisterServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
-
-	<!-- STUDENTS -->
-    <servlet>
-        <servlet-name>RegisterStudentServlet</servlet-name>
-        <servlet-class>com.SMS.main.RegisterStudentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegisterStudentServlet</servlet-name>
-        <url-pattern>/registerStudent</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ViewStudentsServlet</servlet-name>
-        <servlet-class>com.SMS.main.ViewStudentsServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ViewStudentsServlet</servlet-name>
-        <url-pattern>/viewStudents</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>EditStudentServlet</servlet-name>
-        <servlet-class>com.SMS.main.EditStudentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>EditStudentServlet</servlet-name>
-        <url-pattern>/editStudent</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeleteStudentServlet</servlet-name>
-        <servlet-class>com.SMS.main.DeleteStudentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteStudentServlet</servlet-name>
-        <url-pattern>/deleteStudent</url-pattern>
-    </servlet-mapping>
-
-	<!-- FEES -->
-    <servlet>
-        <servlet-name>AddFeeServlet</servlet-name>
-        <servlet-class>com.SMS.main.AddFeeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddFeeServlet</servlet-name>
-        <url-pattern>/addFee</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ViewFeeServlet</servlet-name>
-        <servlet-class>com.SMS.main.ViewFeeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ViewFeeServlet</servlet-name>
-        <url-pattern>/viewFees</url-pattern>
-    </servlet-mapping>
-
-	<!-- MARKS -->
-    <servlet>
-        <servlet-name>AddMarksServlet</servlet-name>
-        <servlet-class>com.SMS.main.AddMarksServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddMarksServlet</servlet-name>
-        <url-pattern>/addMarks</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>MarksServlet</servlet-name>
-        <servlet-class>com.SMS.auth.MarksServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>MarksServlet</servlet-name>
-        <url-pattern>/viewMarks</url-pattern>
-    </servlet-mapping>
 
 </web-app>

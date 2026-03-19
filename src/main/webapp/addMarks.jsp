@@ -1,89 +1,90 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%
-    String studentIdParam = request.getParameter("studentId");
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <title>Add Marks</title>
+
 <style>
+
 body{
-    margin:0;
-    font-family:Segoe UI;
-    background:linear-gradient(120deg,#2ecc71,#27ae60);
+font-family:Segoe UI;
+background:linear-gradient(135deg,#43cea2,#185a9d);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
+
 .container{
-    width:420px;
-    background:white;
-    padding:30px;
-    margin:80px auto;
-    border-radius:15px;
-    box-shadow:0px 10px 30px rgba(0,0,0,0.3);
-    animation:slide 1s ease;
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+width:350px;
+text-align:center;
 }
-@keyframes slide{
-    from{transform:translateY(-50px);opacity:0;}
-    to{transform:translateY(0);opacity:1;}
-}
+
 h2{
-    text-align:center;
-    color:#27ae60;
+margin-bottom:20px;
+color:#185a9d;
 }
+
 input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
 }
+
 button{
-    width:100%;
-    padding:12px;
-    background:#27ae60;
-    border:none;
-    color:white;
-    font-size:16px;
-    border-radius:8px;
-    cursor:pointer;
+width:100%;
+padding:12px;
+background:#3498db;
+border:none;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
 }
+
 button:hover{
-    background:#219150;
+background:#21618c;
 }
-.msg{
-    text-align:center;
-    color:green;
-    margin-bottom:10px;
+
+a{
+display:block;
+margin-top:15px;
+text-decoration:none;
+color:#185a9d;
 }
-.error{
-    text-align:center;
-    color:red;
-    margin-bottom:10px;
-}
+
 </style>
+
 </head>
+
 <body>
 
 <div class="container">
+
 <h2>Add Student Marks</h2>
 
-<% if(request.getParameter("msg") != null){ %>
-    <div class="msg">✅ Marks Added Successfully</div>
-<% } %>
+<form action="<%=request.getContextPath()%>/addMarks" method="post">
 
-<% if(request.getParameter("error") != null){ %>
-    <div class="error">❌ Failed to Add Marks</div>
-<% } %>
+<input type="number" name="studentId" placeholder="Student ID" required>
 
-<form action="addMarks" method="post">
-    <input type="number" name="studentId" placeholder="Student ID" 
-           value="<%= studentIdParam != null ? studentIdParam : "" %>" required>
-    <input type="text" name="subject" placeholder="Subject" required>
-    <input type="number" name="mark" placeholder="Mark" required>
-    <button>Add Marks</button>
+<input type="text" name="subject" placeholder="Subject" required>
+
+<input type="number" name="mark" placeholder="Marks" required>
+
+<button type="submit">Add Marks</button>
+
 </form>
 
-<a href="viewStudents">← Back to Students List</a>
+<a href="dashboard.jsp">← Back</a>
+
 </div>
+
 </body>
+</html>
